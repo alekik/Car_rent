@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/ui/menu">
+
+    <menu id="application" caption="msg://com.company.car_rent/menu.application" insertBefore="administration">
+        <item screen="User.browse" caption="msg://com.company.car_rent.screen.user/UserBrowse.caption"/>
+        <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
+        <item screen="Deal.browse" caption="msg://com.company.car_rent.screen.deal/dealBrowse.menu"/>
+        <item screen="Client.browse" caption="msg://com.company.car_rent.screen.client/clientBrowse.menu"/>
+        <item screen="Car.browse" caption="msg://com.company.car_rent.screen.car/carBrowse.menu"/>
+    </menu>
+
+</menu-config>
