@@ -33,6 +33,8 @@
                 <dateField id="dateOfIssueField" property="dateOfIssue"/>
                 <dateField id="expectedReturnDateField" property="expectedReturnDate"/>
                 <dateField id="actualReturnDateField" property="actualReturnDate"/>
+                <entityPicker id="clientField" property="client"/>
+                <entityPicker id="carField" property="car"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

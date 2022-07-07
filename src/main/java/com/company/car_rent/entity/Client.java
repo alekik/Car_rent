@@ -6,12 +6,11 @@ import io.jmix.core.metamodel.annotation.JmixEntity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @JmixEntity
-@Table(name = "CLIENT", indexes = {
-        @Index(name = "IDX_CLIENT_DEAL_ID", columnList = "DEAL_ID")
-})
+@Table(name = "CLIENT")
 @Entity
 public class Client {
     @JmixGeneratedValue
@@ -43,12 +42,19 @@ public class Client {
     @NotNull
     private String adress;
 
-    @JoinColumn(name = "DEAL_ID")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Deal deal;
+    @OneToMany(mappedBy = "client")
+    private List<Deal> deal;
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "client")
     private User user;
+
+    public void setDeal(List<Deal> deal) {
+        this.deal = deal;
+    }
+
+    public List<Deal> getDeal() {
+        return deal;
+    }
 
     public User getUser() {
         return user;
@@ -56,14 +62,6 @@ public class Client {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public Deal getDeal() {
-        return deal;
-    }
-
-    public void setDeal(Deal deal) {
-        this.deal = deal;
     }
 
     public String getAdress() {

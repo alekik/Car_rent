@@ -7,6 +7,7 @@
         <item screen="Deal.browse" caption="msg://com.company.car_rent.screen.deal/dealBrowse.menu"/>
         <item screen="Client.browse" caption="msg://com.company.car_rent.screen.client/clientBrowse.menu"/>
         <item screen="Car.browse" caption="msg://com.company.car_rent.screen.car/carBrowse.menu"/>
+        <item screen="CarDeals.browse" caption="msg://com.company.car_rent.screen.cardeals/carDealsBrowse.menu"/>
     </menu>
 
 </menu-config>

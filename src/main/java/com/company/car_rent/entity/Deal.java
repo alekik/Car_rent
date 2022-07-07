@@ -6,7 +6,6 @@ import io.jmix.core.metamodel.annotation.JmixEntity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.UUID;
 
 @JmixEntity
@@ -18,11 +17,15 @@ public class Deal {
     @Id
     private UUID id;
 
-    @OneToMany(mappedBy = "deal")
-    private List<Client> client;
+    @NotNull
+    @JoinColumn(name = "CLIENT_ID", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Client client;
 
-    @OneToMany(mappedBy = "deal")
-    private List<Car> car;
+    @NotNull
+    @JoinColumn(name = "CAR_ID", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Car car;
 
     @Column(name = "DATE_OF_ISSUE", nullable = false)
     @NotNull
@@ -35,12 +38,20 @@ public class Deal {
     @Column(name = "ACTUAL_RETURN_DATE")
     private LocalDate actualReturnDate;
 
-    public List<Client> getClient() {
-        return client;
+    public void setCar(Car car) {
+        this.car = car;
     }
 
-    public void setClient(List<Client> client) {
+    public Car getCar() {
+        return car;
+    }
+
+    public void setClient(Client client) {
         this.client = client;
+    }
+
+    public Client getClient() {
+        return client;
     }
 
     public LocalDate getActualReturnDate() {
@@ -65,14 +76,6 @@ public class Deal {
 
     public void setDateOfIssue(LocalDate dateOfIssue) {
         this.dateOfIssue = dateOfIssue;
-    }
-
-    public List<Car> getCar() {
-        return car;
-    }
-
-    public void setCar(List<Car> car) {
-        this.car = car;
     }
 
     public UUID getId() {

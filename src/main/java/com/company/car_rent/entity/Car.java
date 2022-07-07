@@ -5,12 +5,11 @@ import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 import java.util.UUID;
 
 @JmixEntity
-@Table(name = "CAR", indexes = {
-        @Index(name = "IDX_CAR_DEAL_ID", columnList = "DEAL_ID")
-})
+@Table(name = "CAR")
 @Entity
 public class Car {
     @JmixGeneratedValue
@@ -34,16 +33,15 @@ public class Car {
     @NotNull
     private Integer rentPrice;
 
-    @JoinColumn(name = "DEAL_ID")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Deal deal;
+    @OneToMany(mappedBy = "car")
+    private List<Deal> deal;
 
-    public Deal getDeal() {
-        return deal;
+    public void setDeal(List<Deal> deal) {
+        this.deal = deal;
     }
 
-    public void setDeal(Deal deal) {
-        this.deal = deal;
+    public List<Deal> getDeal() {
+        return deal;
     }
 
     public Integer getRentPrice() {
