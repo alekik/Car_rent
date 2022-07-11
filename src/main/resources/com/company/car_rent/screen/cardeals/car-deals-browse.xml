@@ -8,6 +8,13 @@
                     class="com.company.car_rent.entity.CarDeals">
             <loader id="carDealsesDl"/>
         </collection>
+        <instance id="CarDc"
+                  class="com.company.car_rent.entity.Deal">
+            <fetchPlan extends="_base">
+                <property name="car" fetchPlan="_instance_name"/>
+            </fetchPlan>
+            <loader/>
+        </instance>
     </data>
     <facets>
         <dataLoadCoordinator auto="true"/>
@@ -26,10 +33,24 @@
     <dialogMode height="600"
                 width="800"/>
     <layout expand="carDealsesTable" spacing="true">
+<!--        <data>-->
+<!--            <instance id="CarDc"-->
+<!--                      class="com.company.car_rent.entity.Car">-->
+<!--                <fetchPlan extends="_base">-->
+<!--                    <property name="deal" fetchPlan="_instance_name"/>-->
+<!--                </fetchPlan>-->
+<!--                <loader/>-->
+<!--            </instance>-->
+<!--        </data>-->
+        <entityPicker id="carField"
+                      dataContainer="CarDc"
+                      property="car"
+                      >
+        </entityPicker>
         <groupTable id="carDealsesTable"
                     width="100%"
                     dataContainer="carDealsesDc">
-            <columns>
+            <columns >
                 <column id="CarDealId" visible="false"/>
                 <column id="expectedReturnDate"/>
                 <column id="actualReturnDate"/>

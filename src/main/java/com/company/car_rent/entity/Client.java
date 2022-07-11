@@ -1,6 +1,7 @@
 package com.company.car_rent.entity;
 
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
+import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
@@ -18,6 +19,7 @@ public class Client {
     @Id
     private UUID id;
 
+    @InstanceName
     @Column(name = "FULL_NAME", nullable = false)
     @NotNull
     private String fullName;

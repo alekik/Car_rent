@@ -1,6 +1,8 @@
 package com.company.car_rent.entity;
 
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
+import io.jmix.core.metamodel.annotation.DependsOnProperties;
+import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
@@ -82,5 +84,11 @@ public class Car {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    @InstanceName
+    @DependsOnProperties({"mark", "type"})
+    public String getInstanceName() {
+        return String.format("%s %s", mark, type);
     }
 }
