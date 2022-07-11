@@ -45,7 +45,7 @@
         <entityPicker id="carField"
                       dataContainer="CarDc"
                       property="car"
-                      >
+        >
         </entityPicker>
         <groupTable id="carDealsesTable"
                     width="100%"

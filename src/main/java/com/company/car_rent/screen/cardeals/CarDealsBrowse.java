@@ -2,6 +2,7 @@ package com.company.car_rent.screen.cardeals;
 
 import com.company.car_rent.app.CarDealsService;
 import com.company.car_rent.entity.Car;
+import com.company.car_rent.entity.Deal;
 import io.jmix.core.LoadContext;
 import io.jmix.ui.component.HasValue;
 import io.jmix.ui.model.CollectionContainer;
@@ -40,7 +41,13 @@ public class CarDealsBrowse extends StandardLookup<CarDeals> {
 
     }
 
-
+    @Install(to = "carDealsesTable", subject = "styleProvider")
+    private String carDealsesTableStyleProvider(CarDeals entity, String property) {
+        if (entity.getActualReturnDate()==null) {
+            return "green";
+        }
+        return "bold";
+    }
     @Subscribe("carField")
     public void onCustomerFieldValueChange(HasValue.ValueChangeEvent<Car> event) {
 //        event.getValue()

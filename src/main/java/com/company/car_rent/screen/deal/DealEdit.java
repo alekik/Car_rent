@@ -30,8 +30,8 @@ public class DealEdit extends StandardEditor<Deal> {
     public void onCommitAndCloseBtnClick(Button.ClickEvent event) {
         if (dealServise.checkDriverLicinse(this.getEditedEntity()) || dealServise.checkCar(this.getEditedEntity(),this.getEditedEntity().getCar(),this.getEditedEntity().getDateOfIssue()) ) {
             dialogs.createMessageDialog()
-                    .withCaption("Error")
-                    .withMessage("Date")
+                    .withCaption("Ошибка")
+                    .withMessage("Машина ещё занята или срока действия ваших прав не хватает для столь долгой аренды")
                     .show();
             //event.getModifiedInstances().stream().findFirst().get(0);
 //            event.preventCommit();
