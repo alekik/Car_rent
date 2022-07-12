@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.11.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="Car_rent">
+        <addColumn tableName="DEAL">
+            <column name="CLIENT_ID" type="UUID"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="2" author="Car_rent">
+        <addForeignKeyConstraint baseColumnNames="CLIENT_ID" baseTableName="DEAL" constraintName="FK_DEAL_ON_CLIENT"
+                                 referencedColumnNames="ID" referencedTableName="CLIENT"/>
+    </changeSet>
+    <changeSet id="3" author="Car_rent">
+        <dropColumn columnName="deal_id" tableName="client"/>
+    </changeSet>
+</databaseChangeLog>

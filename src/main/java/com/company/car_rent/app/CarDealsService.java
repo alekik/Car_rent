@@ -36,33 +36,9 @@ public class CarDealsService {
     }
 
     public List<CarDeals> fetchCarDealsStatistics(){
-//        List<Deal> deals = dataManager.load(Deal.class).all().fetchPlan("car-with-deals").list();
-//        List<CarDeals> allCarDeals = deals.stream().map(deal -> {
-//            CarDeals carDeals = dataManager.create(CarDeals.class);
-//            carDeals.setCarDealId(deal.getId());
-//            carDeals.setClientName("deal.getClient()");
-//            carDeals.setDateOfIssue(deal.getDateOfIssue());
-//            carDeals.setActualReturnDate(deal.getActualReturnDate());
-//            carDeals.setExpectedReturnDate(deal.getExpectedReturnDate());
-//            return carDeals;
-//        }).collect(Collectors.toList());
-//        return allCarDeals;
 
 
         List<Car> cars = dataManager.load(Car.class).all().fetchPlan("car-with-deals").list();
-        /*List<CarDeals> carDeals = cars.stream().map(car -> {
-            List<CarDeals> carDealList = new ArrayList<>();
-            for (Deal i : car.getDeal()){
-                CarDeals carDeal= dataManager.create(CarDeals.class);
-                carDeal.setCarDealId(i.getId());
-                carDeal.setClientName(i.getClient().getFullName());
-                carDeal.setDateOfIssue(i.getDateOfIssue());
-                carDeal.setActualReturnDate(i.getActualReturnDate());
-                carDeal.setExpectedReturnDate(i.getExpectedReturnDate());
-            }
-            return carDealList;
-        }).collect(Collectors.toList());
-        return carDeals;*/
         List<CarDeals> carDeals = new ArrayList<>();
         for (Car i : cars){
             for (Deal j : i.getDeal()){

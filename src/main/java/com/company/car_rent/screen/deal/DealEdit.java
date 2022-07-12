@@ -33,85 +33,10 @@ public class DealEdit extends StandardEditor<Deal> {
                     .withCaption("Ошибка")
                     .withMessage("Машина ещё занята или срока действия ваших прав не хватает для столь долгой аренды")
                     .show();
-            //event.getModifiedInstances().stream().findFirst().get(0);
-//            event.preventCommit();
-            //event.preventCommit();
-            //notifications.create().withCaption("Error").show();
 
         }
         else {
             this.closeWithCommit();
-            //this.close(StandardOutcome.CLOSE);
         }
     }
-
-
-
-//    @Subscribe(target = Target.DATA_CONTEXT)
-//    public void onPreCommit(DataContext.PreCommitEvent event) {
-//        if (dealServise.checkDriverLicinse(this.getEditedEntity()) || dealServise.checkCar(this.getEditedEntity(),this.getEditedEntity().getCar(),this.getEditedEntity().getDateOfIssue()) ) {
-//            dialogs.createMessageDialog()
-//                    .withCaption("Error")
-//                    .withMessage("Date")
-//                    .show();
-//            //event.getModifiedInstances().stream().findFirst().get(0);
-////            event.preventCommit();
-//            //event.preventCommit();
-//            //notifications.create().withCaption("Error").show();
-//
-//        }
-//
-//    }
-
-//    @Subscribe("checkBtn")
-//    public void onCheckBtnClick(Button.ClickEvent event) {
-//        if (dealServise.checkDriverLicinse(this.getEditedEntity()) || dealServise.checkCar(this.getEditedEntity(),this.getEditedEntity().getCar(),this.getEditedEntity().getDateOfIssue()) ) {
-//            dialogs.createMessageDialog()
-//                    .withCaption("Error")
-//                    .withMessage("Date")
-//                    .show();
-//            //event.getModifiedInstances().stream().findFirst().get(0);
-////            event.preventCommit();
-//            //event.preventCommit();
-//            //notifications.create().withCaption("Error").show();
-//
-//        }
-//        else {
-//            close(StandardOutcome.COMMIT);
-//        }
-//    }
-
-
-
-
-
-
-//    @Subscribe("commitAndCloseBtn")
-//    public void onCommitAndCloseBtnClick(Button.ClickEvent event) {
-//
-//    }
-
-
-
-//    @Subscribe("windowCommitAndClose")
-//    public void onWindowCommitAndClose(Action.ActionPerformedEvent event) {
-//        //System.out.println(this.getEditedEntity().getClient().getFullName());
-//        //dealServise.createDeal(this.getEditedEntity());
-//        /*dialogs.createMessageDialog()
-//                .withCaption("Error")
-//                .withMessage("Date")
-//                .show();*/
-//
-//    }
-
-    /*@Autowired
-    private Dialogs dialogs;
-
-    @Subscribe("msgDialogBtn")
-    public void onMsgDialogBtnClick(Button.ClickEvent event) {
-        dialogs.createMessageDialog()
-                .withCaption("Error")
-                .withMessage("Date")
-                .show();
-    }*/
 }
