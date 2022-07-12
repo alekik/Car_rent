@@ -108,7 +108,7 @@
             <column name="DATE_OF_ISSUE" value="2022-07-08"/>
             <column name="EXPECTED_RETURN_DATE" value="2022-07-09"/>
             <column name="ACTUAL_RETURN_DATE" value="2022-07-09"/>
-            <column name="CLIENT_ID" value="EMPL5f555aee-ac01-8c99-61ae-26ec216f93ae"/>
+            <column name="CLIENT_ID" value="5f555aee-ac01-8c99-61ae-26ec216f93ae"/>
             <column name="CAR_ID" value="5c8965ec-bbbd-4443-34f2-af98de0b266d"/>
 
             <column name="CREATED_BY" value="admin"/>
